@@ -18,9 +18,10 @@ public class CreateSocialLinkEndpoint(CardinarDbContext ctx) : Endpoint<CreateSo
         await using var file = new FileStream(filePath, FileMode.Create);
         await req.Icon.CopyToAsync(file, ct);
 
-        var newLink = req.ToEntity(filePath);
-        ctx.SocialLinks.Add(newLink);
+        var newLink = ctx.SocialLinks.Add(req.ToEntity(filePath));
+        
         await ctx.SaveChangesAsync(ct);
-        return newLink;
+        
+        return CreateSocialLinkResponse.FromEntity(newLink.Entity);
     }
 }

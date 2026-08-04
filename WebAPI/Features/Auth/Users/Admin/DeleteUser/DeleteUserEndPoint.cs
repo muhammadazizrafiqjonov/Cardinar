@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Core.Exceptions;
 
 namespace WebAPI.Features.Auth.Users.Admin.DeleteUser;
 
@@ -16,11 +17,12 @@ public class DeleteUserEndPoint(CardinarDbContext context) : Endpoint<DeleteUser
     public override async Task HandleAsync(DeleteUserRequest req, CancellationToken ct)
     {
         var user = await context.Users.SingleOrDefaultAsync(u => u.Id == req.Id, ct);
-        if (user == null)
+        
+        if (user is null)
         {
-            throw new Exception("User with given id does not exists");
+            throw new Exception("Bunday ID ga ega User mavjud emas!");
         }
-
+        
         context.Users.Remove(user);
 
         await context.SaveChangesAsync(ct);

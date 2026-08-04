@@ -1,9 +1,6 @@
-﻿using Cardinar.Features.Common.Entities;
-using FastEndpoints;
-using WebAPI.Features.Branches.Entity;
-using PhoneNumber = WebAPI.Features.Common.Entities.PhoneNumber;
+﻿using PhoneNumber = WebAPI.Features.Common.Entities.PhoneNumber;
 
-namespace Cardinar.Features.Common.PhoneNumbers.Admin.UpdatePhoneNumber;
+namespace WebAPI.Features.Common.PhoneNumbers.Admin.UpdatePhoneNumber;
 
 public class UpdatePhoneNumberRequest
 {

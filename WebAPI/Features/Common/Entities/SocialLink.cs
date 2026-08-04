@@ -22,6 +22,6 @@ public class SocialLinkConfiguration : IEntityTypeConfiguration<SocialLink>
         builder.Property(x => x.Icon).HasMaxLength(256).IsRequired();
         builder.Property(x => x.Link).HasMaxLength(256).IsRequired();
 
-        builder.Property(x => x.CreatedAt).HasDefaultValueSql("NOW");
+        builder.Property(x => x.CreatedAt).HasDefaultValueSql("NOW()");
     }
 }

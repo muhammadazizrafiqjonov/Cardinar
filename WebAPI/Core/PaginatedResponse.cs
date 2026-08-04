@@ -1,5 +1,4 @@
-﻿using WebAPI.Features.Auth.Users.Admin.GetAllUsers;
-using WebAPI.Features.Common.PhoneNumbers.Admin.GetAllPhoneNumbers;
+﻿using WebAPI.Features.Common.PhoneNumbers.Admin.GetAllPhoneNumbers;
 
 namespace WebAPI.Core;
 
@@ -12,7 +11,7 @@ public class PaginatedResponse<T>
     public bool HasPrevious { get; set; }
     public ICollection<T> Data { get; set; } = [];
 
-    public static GetAllPhoneNumbersResponse BuildFrom(int totalCount, int totalPages, int currentPage, ICollection<T> data) => new GetAllPhoneNumbersResponse()
+    public static PaginatedResponse<T> BuildFrom(int totalCount, int totalPages, int currentPage, ICollection<T> data) => new()
     {
         TotalCount = totalCount,
         TotalPages = totalPages,

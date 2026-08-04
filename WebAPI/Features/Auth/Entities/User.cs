@@ -4,6 +4,7 @@ namespace WebAPI.Features.Auth.Entities;
 
 public class User : BaseEntity
 {
+    
     [StringLength(64)]
     public string FullName { get; set; } = null!;
 

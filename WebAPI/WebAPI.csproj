@@ -24,7 +24,6 @@
     </ItemGroup>
     
     <ItemGroup>
-      <Folder Include="Features\Auth\Users\Admin\UpdateUser\" />
       <Folder Include="Features\Auth\Users\Public\" />
     </ItemGroup>
 </Project>

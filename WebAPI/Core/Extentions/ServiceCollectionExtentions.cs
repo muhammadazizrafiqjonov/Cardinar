@@ -3,7 +3,7 @@ using FastEndpoints.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace WebAPI.Core.Extensions;
+namespace WebAPI.Core.Extentions;
 
 public static class ServiceCollectionExtensions
 {

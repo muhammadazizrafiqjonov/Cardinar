@@ -1,5 +1,4 @@
-﻿using Cardinar.Features.Common.PhoneNumbers.Admin.UpdatePhoneNumber;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebAPI.Core.Exceptions;
 
 namespace WebAPI.Features.Common.PhoneNumbers.Admin.UpdatePhoneNumber;

@@ -1,6 +1,20 @@
-﻿namespace WebAPI.Features.Auth.Users.Admin.CreateUser;
-
-public class CreateUserRequest
-{
-    
-}
+﻿using WebAPI.Features.Auth.Entities;
+ 
+ namespace WebAPI.Features.Auth.Users.Admin.CreateUser;
+ 
+ public class CreateUserRequest
+ {
+     public string FullName { get; set; } = null!;
+     public string PhoneNumber { get; set; } = null!;
+     public string Email { get; set; } = null!;
+     public string Password { get; set; } = null!;
+     public bool IsAdmin { get; set; }
+ 
+     public User ToEntity() => new User()
+     {
+         FullName = FullName,
+         PhoneNumber = PhoneNumber,
+         Email = Email,
+         Password = Password
+     };
+ }

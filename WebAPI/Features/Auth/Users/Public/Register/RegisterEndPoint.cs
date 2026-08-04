@@ -12,6 +12,7 @@ public class RegisterEndpoint(CardinarDbContext context) : Endpoint<RegisterRequ
         Post("v1/public/auth/register");
         Options(opts => opts.WithTags("Auth"));
         Tags("Public");
+        AllowAnonymous();
     }
 
     public override async Task<Created<User>> ExecuteAsync(RegisterRequest req, CancellationToken ct)

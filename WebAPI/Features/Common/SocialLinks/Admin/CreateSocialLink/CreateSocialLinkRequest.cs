@@ -10,6 +10,8 @@ public class CreateSocialLinkRequest
 
     public SocialLink ToEntity(string icon) => new()
     {
-        Icon = icon
+        Icon = icon,
+        Title = Title,
+        Link = Link
     };
 }
