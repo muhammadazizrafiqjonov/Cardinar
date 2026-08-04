@@ -7,7 +7,7 @@ public class DeletePhoneNumberEndpoint(CardinarDbContext context) : Endpoint<Del
 {
     public override void Configure()
     {
-        Delete("v1/admin/phone-numbers/delete-phone-number");
+        Delete("v1/admin/phone-numbers/delete-phone-number/{id:int}");
         Policies("Admin");
         Tags("Admin");
         Options(opts => opts.WithTags("PhoneNumber"));

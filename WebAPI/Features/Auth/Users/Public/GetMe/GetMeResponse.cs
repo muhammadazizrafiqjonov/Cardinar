@@ -7,6 +7,7 @@ namespace WebAPI.Features.Auth.Users.Public.GetMe;
 
 public class GetMeResponse
 {
+    public int Id { get; set; }
     public string FullName { get; set; } = null!;
     
     public string PhoneNumber { get; set; } = null!;
@@ -20,6 +21,7 @@ public class GetMeResponse
     
     public static readonly Expression<Func<User, GetMeResponse>> Project = u => new GetMeResponse
     {
+        Id = u.Id,
         FullName = u.FullName,
         PhoneNumber = u.PhoneNumber,
         Email = u.Email,

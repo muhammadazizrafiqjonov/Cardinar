@@ -8,7 +8,7 @@ public class DeleteUserEndPoint(CardinarDbContext context) : Endpoint<DeleteUser
 {
     public override void Configure()
     {
-        Delete("v1/admin/users/{id:int}");
+        Delete("v1/admin/users/delete-user/{id:int}");
         Tags("Admin");
         AllowAnonymous();
         Options(opts => opts.WithTags("Users"));
