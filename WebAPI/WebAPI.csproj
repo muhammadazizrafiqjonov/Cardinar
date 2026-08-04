@@ -22,8 +22,4 @@
     <ItemGroup>
         <Using Include="WebAPI.Core"/>
     </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="Features\Auth\Users\Public\" />
-    </ItemGroup>
 </Project>
