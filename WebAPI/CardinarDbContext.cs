@@ -16,6 +16,7 @@ public class CardinarDbContext(DbContextOptions<CardinarDbContext> options) : Db
     public DbSet<PhoneNumber> PhoneNumbers { get; set; }
     public DbSet<CarMake> CarMakes { get; set; }
     public DbSet<CarModel> CarModels { get; set; }
+    public DbSet<Branch> Branches { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
