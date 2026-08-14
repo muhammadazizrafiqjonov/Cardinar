@@ -17,9 +17,6 @@ public class GetAllBranchesEndpoint(CardinarDbContext ctx) : Endpoint<GetAllBran
     {
         var ifExists = await ctx.Users.AnyAsync(u => u.Email == req.Email, ct);
         DoesNotExistsException.ThrowIf(ifExists);
-
-        var hasPermission = await ctx.Users.AnyAsync(u => u.IsAdmin == req.IsAdmin);
-        ForbiddenException.ThrowIf(hasPermission);
         
         var currentPage = req.Page ?? 1;
         var take = req.Size ?? 10;
@@ -36,7 +33,6 @@ public class GetAllBranchesEndpoint(CardinarDbContext ctx) : Endpoint<GetAllBran
         var data = await query.Select(GetAllBranchesResponse.Project).Skip(skip).Take(take).ToArrayAsync(ct);
 
         return PaginatedResponse<GetAllBranchesResponse>.BuildFrom(totalCount, totalPages, currentPage, data);
-        
         
     }
 }

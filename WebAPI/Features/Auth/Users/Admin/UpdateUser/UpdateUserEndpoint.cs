@@ -15,12 +15,12 @@ public class UpdateUserEndpoint(CardinarDbContext context) : Endpoint<UpdateUser
 
     public override async Task<UpdateUserResponse> ExecuteAsync(UpdateUserRequest req, CancellationToken ct)
     {
-        var updatedUserNumber = context.Users.Update(req.ToEntity());
-        await context.SaveChangesAsync(ct);
-        
         var ifExists =
             await context.PhoneNumbers.AnyAsync(p =>  p.Id == req.Id, ct);
         DoesNotExistsException.ThrowIf(ifExists);
+        
+        var updatedUserNumber = context.Users.Update(req.ToEntity());
+        await context.SaveChangesAsync(ct);
 
         return UpdateUserResponse.FromEntity(updatedUserNumber.Entity);
     }
