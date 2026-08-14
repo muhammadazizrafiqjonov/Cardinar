@@ -14,13 +14,17 @@ public class DeleteBranchEndpoint(CardinarDbContext ctx) : Endpoint<DeleteBranch
         Options(opts => opts.WithTags("Branches"));
     }
 
-    public override async Task<NoContent> HandleAsync(DeleteBranchRequest req, CancellationToken ct)
+    public override async Task HandleAsync(DeleteBranchRequest req, CancellationToken ct)
     {
         var ifExists = await ctx.Branches
             .AnyAsync(b => Equals(b.Id, req.Id), ct);
         DoesNotExistsException.ThrowIf(ifExists);
         
-        
-        
+        var user = await ctx.Branches.SingleOrDefaultAsync(b => Equals(b.Id, req.Id), ct);
+        if (user != null) ctx.Branches.Remove(user);
+
+        await ctx.SaveChangesAsync(ct);
+
+        await Send.NoContentAsync();
     }
 }
