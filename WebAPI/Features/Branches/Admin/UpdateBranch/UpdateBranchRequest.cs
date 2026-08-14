@@ -1,4 +1,5 @@
 ﻿using WebAPI.Core.Enums;
+using WebAPI.Features.Branches.Entity;
 
 namespace WebAPI.Features.Branches.Admin.UpdateBranch;
 
@@ -23,4 +24,17 @@ public class UpdateBranchRequest
     public bool IsActive { get; set; } = true;
     
     public BranchType BranchType { get; set; }
+    
+    public Branch ToEntity() => new Branch()
+    {
+        Title = Title,
+        Address = Address,
+        District = District,
+        Region = Region,
+        PhoneNumber = PhoneNumber,
+        IsActive = IsActive,
+        Longitude = Longitude,
+        Latitude = Latitude,
+        BranchType = BranchType
+    };
 }

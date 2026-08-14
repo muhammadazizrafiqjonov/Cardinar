@@ -19,5 +19,10 @@ public class UpdateBranchEndpoint(CardinarDbContext ctx) : Endpoint<UpdateBranch
             await ctx.Branches.AnyAsync(b =>  b.Id == req.Id, ct);
         DoesNotExistsException.ThrowIf(ifExists);
         
+        var updatedBranch = ctx.Branches.Update(req.ToEntity());
+        await ctx.SaveChangesAsync(ct);
+
+        return UpdateBranchResponse.FromEntity(updatedBranch.Entity);
+        
     }
 }

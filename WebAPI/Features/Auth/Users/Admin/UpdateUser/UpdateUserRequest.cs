@@ -20,6 +20,10 @@ public class UpdateUserRequest
     
     public User ToEntity() => new User()
     {
-        Id = Id
+        FullName = FullName,
+        PhoneNumber = PhoneNumber,
+        Email = Email,
+        Password = Password,
+        IsAdmin = IsAdmin
     };
 }

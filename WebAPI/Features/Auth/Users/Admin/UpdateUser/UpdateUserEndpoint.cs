@@ -19,9 +19,9 @@ public class UpdateUserEndpoint(CardinarDbContext context) : Endpoint<UpdateUser
             await context.PhoneNumbers.AnyAsync(p =>  p.Id == req.Id, ct);
         DoesNotExistsException.ThrowIf(ifExists);
         
-        var updatedUserNumber = context.Users.Update(req.ToEntity());
+        var updatedUser = context.Users.Update(req.ToEntity());
         await context.SaveChangesAsync(ct);
 
-        return UpdateUserResponse.FromEntity(updatedUserNumber.Entity);
+        return UpdateUserResponse.FromEntity(updatedUser.Entity);
     }
 }

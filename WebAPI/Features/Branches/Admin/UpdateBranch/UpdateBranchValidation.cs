@@ -1,11 +1,11 @@
-﻿using FastEndpoints;
-using FluentValidation;
+﻿using FluentValidation;
+using WebAPI.Features.Branches.Admin.CreateBranch;
 
-namespace WebAPI.Features.Branches.Admin.CreateBranch;
+namespace WebAPI.Features.Branches.Admin.UpdateBranch;
 
-public class CreateBranchValidator : Validator<CreateBranchRequest>
+public class UpdateBranchValidator : Validator<CreateBranchRequest>
 {
-    public CreateBranchValidator()
+    public UpdateBranchValidator()
     {
         RuleFor(x => x.Title).NotEmpty().MaximumLength(200);
         RuleFor(x => x.Address).NotEmpty();
@@ -15,4 +15,4 @@ public class CreateBranchValidator : Validator<CreateBranchRequest>
         RuleFor(x => x.Latitude).InclusiveBetween(-90, 90);
         RuleFor(x => x.BranchType).IsInEnum();
     }
-}
+    }
