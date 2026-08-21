@@ -1,6 +1,6 @@
-﻿namespace WebAPI.Features.Branches.Admin.GetAllBranches;
+namespace WebAPI.Features.Vehicles.CarMake.Admin.GetAllCarMakes;
 
-public class GetAllBranchesRequest
+public class GetAllCarMakesRequest
 {
     public string? Search { get; set; }
     public int? Size { get; set; }

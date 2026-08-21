@@ -25,7 +25,7 @@ public class UpdateBranchRequest
     
     public BranchType BranchType { get; set; }
     
-    public Branch ToEntity() => new Branch()
+    public Branch ToEntity() => new ()
     {
         Title = Title,
         Address = Address,

@@ -15,9 +15,6 @@ public class GetAllBranchesEndpoint(CardinarDbContext ctx) : Endpoint<GetAllBran
 
     public override async Task<PaginatedResponse<GetAllBranchesResponse>> ExecuteAsync(GetAllBranchesRequest req, CancellationToken ct)
     {
-        var ifExists = await ctx.Users.AnyAsync(u => u.Email == req.Email, ct);
-        DoesNotExistsException.ThrowIf(ifExists);
-        
         var currentPage = req.Page ?? 1;
         var take = req.Size ?? 10;
         var skip = (currentPage - 1) * take;

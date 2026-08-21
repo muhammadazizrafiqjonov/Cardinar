@@ -28,7 +28,6 @@
       <Folder Include="Features\Orders\OrderItem\Public\" />
       <Folder Include="Features\Orders\Order\Admin\" />
       <Folder Include="Features\Orders\Order\Public\" />
-      <Folder Include="Features\Vehicles\CarMake\Public\GetAllCarMake\" />
       <Folder Include="Features\Vehicles\CarModel\Admin\CreateCarModel\" />
       <Folder Include="Features\Vehicles\CarModel\Admin\DeleteCarModel\" />
       <Folder Include="Features\Vehicles\CarModel\Admin\GetAllCarModels\" />
