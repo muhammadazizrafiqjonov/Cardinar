@@ -20,8 +20,8 @@ public class DeleteBranchEndpoint(CardinarDbContext ctx) : Endpoint<DeleteBranch
             .AnyAsync(b => Equals(b.Id, req.Id), ct);
         DoesNotExistsException.ThrowIf(ifExists);
         
-        var user = await ctx.Branches.SingleOrDefaultAsync(b => Equals(b.Id, req.Id), ct);
-        if (user != null) ctx.Branches.Remove(user);
+        var branch = await ctx.Branches.SingleOrDefaultAsync(b => Equals(b.Id, req.Id), ct);
+        if (branch != null) ctx.Branches.Remove(branch);
 
         await ctx.SaveChangesAsync(ct);
 

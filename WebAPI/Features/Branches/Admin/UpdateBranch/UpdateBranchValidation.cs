@@ -3,7 +3,7 @@ using WebAPI.Features.Branches.Admin.CreateBranch;
 
 namespace WebAPI.Features.Branches.Admin.UpdateBranch;
 
-public class UpdateBranchValidator : Validator<CreateBranchRequest>
+public class UpdateBranchValidator : Validator<UpdateBranchRequest>
 {
     public UpdateBranchValidator()
     {

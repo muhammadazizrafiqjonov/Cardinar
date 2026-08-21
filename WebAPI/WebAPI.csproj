@@ -22,4 +22,17 @@
     <ItemGroup>
         <Using Include="WebAPI.Core"/>
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Features\Orders\OrderItem\Admin\" />
+      <Folder Include="Features\Orders\OrderItem\Public\" />
+      <Folder Include="Features\Orders\Order\Admin\" />
+      <Folder Include="Features\Orders\Order\Public\" />
+      <Folder Include="Features\Vehicles\CarMake\Public\GetAllCarMake\" />
+      <Folder Include="Features\Vehicles\CarModel\Admin\CreateCarModel\" />
+      <Folder Include="Features\Vehicles\CarModel\Admin\DeleteCarModel\" />
+      <Folder Include="Features\Vehicles\CarModel\Admin\GetAllCarModels\" />
+      <Folder Include="Features\Vehicles\CarModel\Admin\UpdateCarModel\" />
+      <Folder Include="Features\Vehicles\CarModel\Public\GetAllCarModels\" />
+    </ItemGroup>
 </Project>

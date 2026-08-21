@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace WebAPI.Features.Common.Entities;
+namespace WebAPI.Features.Vehicles.Entities;
 
 public class CarModel : BaseEntity
 {

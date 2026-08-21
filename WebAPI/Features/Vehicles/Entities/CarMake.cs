@@ -1,4 +1,5 @@
-﻿namespace WebAPI.Features.Common.Entities;
+
+namespace WebAPI.Features.Vehicles.Entities;
 
 public class CarMake : BaseEntity
 {
